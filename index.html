@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HBD by your love</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Dekorasi Balon dan Pita -->
+    <div class="decoration" id="decoration">
+        <div class="balloon" style="top: 10%; left: 10%; animation-delay: 0s;">🎈</div>
+        <div class="balloon" style="top: 20%; right: 15%; animation-delay: 1s;">🎈</div>
+        <div class="balloon" style="bottom: 20%; left: 20%; animation-delay: 2s;">🎈</div>
+        <div class="balloon" style="bottom: 10%; right: 20%; animation-delay: 3s;">🎈</div>
+        <div class="ribbon" style="top: 5%; right: 5%; animation-delay: 0.5s;">🎀</div>
+        <div class="ribbon" style="bottom: 15%; left: 5%; animation-delay: 1.5s;">🎀</div>
+    </div>
+
+    <!-- Halaman 1: Cieee -->
+    <div id="page1" class="container">
+        <h1>🎉 Cieee...!</h1>
+        <p style="font-size: 1.3rem; color: #2c3e50; margin-bottom: 2.5rem;">
+           Ada yang ulang tahun nih! 
+        </p>
+        <button class="btn" onclick="goToPage2()">Iya nih </button>
+        <button class="btn btn-secondary" onclick="goToLuckPage()">Ngga kok </button>
+    </div>
+
+    <!-- Halaman 2: Input Nama & Tanggal Lahir -->
+    <div id="page2" class="container hidden">
+        <h1>Kenalan dulu dong biar makin deket hehe...</h1>
+        <div class="input-group">
+            <label>Nama Lengkap:</label>
+            <input type="text" id="namaInput" placeholder="Masukkan nama lengkap...">
+        </div>
+        <div class="input-group">
+            <label>Tanggal Lahir:</label>
+            <input type="text" id="tglInput" placeholder="Contoh: 01 Januari 2001">
+        </div>
+        <div id="errorMsg" class="error hidden">Yang bener dong ngisi nya!</div>
+        <button class="btn" onclick="checkBirthday()">Siap</button>
+        <button class="btn btn-secondary" onclick="goToPage1()">Belum Siap</button>
+    </div>
+
+    <!-- Halaman 3: Ucapan Ulang Tahun -->
+    <div id="page3" class="container birthday-page hidden">
+        <h1 class="birthday-title">🎂 SELAMAT ULANG TAHUN KE-19 YAAA! 🎂</h1>
+        <p style="font-size: 1.4rem; color: #d73227; margin-bottom: 1rem;">
+           Untuk Cewekuuu </p>
+        <p style="font-size: 2.4rem; color: #e74c3c; margin-bottom: 1rem;">
+           <strong>Indah Kurnia Sari</strong> </p>
+        
+        <div class="photo-upload">
+            <picture>
+            <input type="file" id="photoInput" accept="image/*" onchange="previewPhoto(event)">
+            <img src="iki wae.jpeg" alt="Preview Foto" style="width:100%;">
+            </picture>
+        </div>
+
+        <div class="prayers">
+            <h3 style="font-size: 1.5rem;">💖 UCAPAN-UCAPAN DARIKU UNTUKMU💖</h3>
+            <p> Semoga Allah SWT selalu melimpahkan rahmat dan karunia-Nya kepadamu.</p>
+            <p> Semoga diberkahi dengan umur yang panjang, barokah, dan penuh kebaikan.</p>
+            <p> Semoga tetap diberikan rasa sabar yang seluas-luasnya, selalu istiqomah dalam beribadah, dan selalu diberi kesehatan.</p>
+            <p> Semoga bisa segera berangkat ke Jepang yaaa dan bisa cepat beradaptasi supaya betah di sana juga semua cita-cita dan impianmu tercapai dengan ridho-Nya Allah.</p>
+            <p> Semoga menjadi perempuan yang sholehah bisa membanggakan orang tua dan bermanfaat untuk orang banyak. Aamiin</p>
+            <p> Dietmu juga jangan lupa diseriusin yaaa aku tunggu sampai kamu langsing, semoga kamu juga doyan banyak buah dan sayur, dikurangin sambatnya juga perbanyak bersyukur, karo boyokmu dijogo ben ojo boyoken wae hehe...</p>
+            <p> Jangan lupa selalu berdoa untuk kita yaaa walaupun saat ini kita belum bisa bersama semoga kelak bisa benar-benar berjodoh dan menjalani kehidupan ini bersama-sama di masa yang akan datang </p>
+            <p style="font-size: 1rem; margin-bottom: 1rem;"> <strong>🥰LOVE YOU SELALU SAYANGKUUU🥰</strong></p>
+        </div>
+    </div>
+
+    <!-- Halaman Salah Pilih -->
+    <div id="luckPage" class="container hidden">
+        <h1 style="color: #6c5ce7;">Yah!</h1>
+        <p class="luck-page" style="font-size: 1.4rem; margin: 2rem 0;">
+           Kamu belum beruntung... <br>
+           <strong>Coba lagi nanti ya!</strong>
+        </p>
+        <button class="btn" onclick="goToPage1()">Coba Lagi</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
